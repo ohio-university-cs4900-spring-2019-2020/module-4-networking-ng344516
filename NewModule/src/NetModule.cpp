@@ -13,7 +13,7 @@
 
 using namespace Aftr;
 
-//NetMsgMacroDefinition(NetModule);
+NetMsgMacroDefinition(NetModule);
 
 NetModule::NetModule(const Vector position) {
 	this->position.x = position.x;
@@ -32,7 +32,7 @@ bool NetModule::toStream(NetMessengerStreamBuffer& os) const {
 	return true;
 }
 
-bool NetModule::fromStream(NetMessengerStreamBuffer is) {
+bool NetModule::fromStream(NetMessengerStreamBuffer& is) {
 	is >> this->position.x;
 	is >> this->position.y;
 	is >> this->position.z;
